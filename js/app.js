@@ -354,7 +354,7 @@ function fetchJournalEntries() {
 
     timelineContainer.innerHTML = `<div class="p-8 text-center text-gray-400 col-span-full">
         <div class="loader mx-auto" aria-hidden="true"></div>
-        <p class="mt-4">Fetching your journal entries in real-time...</p>
+        <p class="mt-4">Updating your journal...</p>
     </div>`;
 
     timelineContainer.className = 'grid grid-cols-1 gap-6';
@@ -510,7 +510,7 @@ function renderAppView() {
                 <div class="flex justify-between items-center mb-10">
                     <div>
                         <h1 class="text-4xl font-extrabold text-white mb-1">Uploaded Journal</h1>
-                        <p class="text-gray-400">Your memories, saved securely with Cloudinary & Firestore.</p>
+                        <p class="text-gray-400">Saved securely with Cloudinary & Firestore.</p>
                     </div>
                     <button onclick="navigateTo('upload')" class="px-5 py-2.5 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-700 transition flex items-center text-sm">
                         <i data-lucide="plus-circle" class="w-4 h-4 mr-2"></i> New Memory
@@ -539,11 +539,11 @@ function renderAppView() {
                                 <textarea id="upload-caption" rows="4" class="w-full p-3 border border-gray-600 bg-gray-800 text-gray-100 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Unsa ang naa sa imong hunahuna karon?"></textarea>
                             </div>
                             <div>
-                                <label for="upload-datetime" class="block text-sm font-medium text-gray-300 mb-1">Entry Date & time:</label>
+                                <label for="upload-datetime" class="block text-sm font-medium text-gray-300 mb-1">Entry Date & time (PST):</label>
                                 <input type="datetime-local" id="upload-datetime" readonly class="w-full p-3 border border-gray-600 bg-gray-800 text-gray-400 rounded-lg">
                             </div>
                             <div>
-                                <label for="upload-email" class="block text-sm font-medium text-gray-300 mb-1">Uploader Email:</label>
+                                <label for="upload-email" class="block text-sm font-medium text-gray-300 mb-1">Email:</label>
                                 <input type="text" id="upload-email" readonly class="w-full p-3 border border-gray-600 bg-gray-800 text-gray-400 rounded-lg">
                             </div>
                             <div>
@@ -567,7 +567,7 @@ function renderAppView() {
             break;
 
         case 'profile':
-            title = 'My Profile and Account';
+            title = 'Account Information';
             content = `
                 <div class="flex flex-col items-center justify-center min-h-[70vh]">
                     <h1 class="text-3xl font-bold mb-6 text-gray-100 text-center">${title}</h1>
@@ -581,7 +581,7 @@ function renderAppView() {
                                 <label class="block text-sm font-medium text-gray-300 mb-2">Profile Picture</label>
                                 <div class="flex items-center space-x-4">
                                     <div class="w-20 h-20 bg-gray-800 rounded-full overflow-hidden border border-gray-700" id="profile-pic-preview">
-                                        <img id="profile-pic-img" src="https://placehold.co/160x160/3c3c6f/a78bfa?text=Avatar" alt="Profile" class="w-full h-full object-cover">
+                                        <img id="profile-pic-img" src="https://i.pinimg.com/474x/65/1c/6d/651c6da502353948bdc929f02da2b8e0.jpg?nii=t" alt="Profile" class="w-full h-full object-cover">
                                     </div>
                                     <div class="flex-1">
                                         <input type="file" id="profile-pic-file" accept="image/*" class="text-sm text-gray-300">
@@ -591,7 +591,7 @@ function renderAppView() {
                             </div>
                             <div class="mt-4 text-left">
                                 <label for="profile-bio" class="block text-sm font-medium text-gray-300 mb-2">Bio mo o bio ko HAHAHA</label>
-                                <textarea id="profile-bio" rows="4" class="w-full p-3 border border-gray-600 bg-gray-800 text-gray-100 rounded-lg" placeholder="Tell others a bit about yourself..."></textarea>
+                                <textarea id="profile-bio" rows="4" class="w-full p-3 border border-gray-600 bg-gray-800 text-gray-100 rounded-lg" placeholder="Qoutes, motivation etc..."></textarea>
                             </div>
                             <div id="profile-message" class="text-center mt-2"></div>
                             <div class="flex space-x-3 mt-4">
@@ -607,7 +607,7 @@ function renderAppView() {
             break;
 
         case 'contact':
-            title = 'App created: Oct. 15, 2025 at 11:45PM';
+            title = '© 2026 Lau Daily. All rights reserved.';
             content = `
                 <div class="flex flex-col items-center justify-center min-h-[70vh]">
                     <h1 class="text-3xl font-bold mb-6 text-gray-100 text-center">${title}</h1>
@@ -615,22 +615,26 @@ function renderAppView() {
                         <h3 class="text-2xl font-semibold mb-6 text-white text-center">Developer Information</h3>
                         <div class="space-y-4 text-gray-300">
                             <div class="p-4 bg-gray-700 rounded-lg">
-                                <p class="font-bold text-indigo-300">Name:</p>
+                                <p class="font-bold text-indigo-300">Created: </p> <p>October 15, 2025</p>
+                                <p class="font-bold text-indigo-300">Username:</p>
                                 <p>ryu.dev ౨ৎ</p>
                                 <p class="font-bold text-indigo-300">Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Course:</p>
-                                <p>18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BSCpE — Computer Engineering <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BSCS — Computer Science</p>
+                                <p>18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BSCpE — Computer Engineering <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BSCS — Computer Science
+                                </p>
                             </div>
                             <div class="p-4 bg-gray-700 rounded-lg">
                                 <p class="font-bold text-indigo-300">Email:</p>
                                 <p>bscpe.laurence.helloworld@gmail.com</p>
                                 <p>comp.sci.lau@programmer.net</p>
-                                <p class="font-bold text-indigo-300">Direct link to:</p>
-                                <a href="https://t.me/yuhimofanny" target="_blank" class="hover:underline">Telegram || <a href="https://github.com/ryuuufynnn" target="_blank" class="hover:underline">GitHub</a>
-                                <p class="font-bold text-indigo-300">"have a little faith :>"</p>
+                                <p class="font-bold text-indigo-300 mb-0">Tech Stack:</p>
+                                <p class="mt-0">Frontend: HTML, Tailwind CSS, JavaScript <br>Media Storage: Cloudinary <br> PWA Config: manifest.json <br> Backend: Firebase <br></p>
+                                
                             </div>
                             <div class="p-4 bg-gray-700 rounded-lg">
                                 <div class="p-4 bg-gray-700 rounded-lg text-center">
-                                    <p class="font-bold text-indigo-300 mb-3">Chat ka na lang</p>
+                                    <p class="font-bold text-indigo-300 mb-0.5"><br>Chat ka na lang.</p>
+                                    <a href="https://t.me/yuhimofanny" target="_blank" class="hover:underline">Telegram || <a href="https://github.com/ryuuufynnn" target="_blank" class="hover:underline">GitHub <br></a>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
                                     <div class="flex justify-center space-x-6 text-gray-300">
                                         <a href="https://www.facebook.com/laudgaf" target="_blank" class="hover:text-blue-500 transition transform hover:scale-110">
                                             <i data-lucide="facebook" class="w-6 h-6"></i>

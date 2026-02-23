@@ -71,7 +71,7 @@ function getFriendlyAuthError(errorCode) {
         case 'auth/wrong-password':
         case 'auth/invalid-credential': return 'Incorrect Email or Password.';
         case 'auth/email-already-in-use': return 'Email already in use.';
-        case 'auth/weak-password': return 'Weaak Password: Password is too short.';
+        case 'auth/weak-password': return 'Weak Password: Password is too short.';
         default: return `Unknown Error (Code: ${errorCode}). Check the console for details.`;
     }
 }
